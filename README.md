@@ -27,17 +27,17 @@ The information about the ROSE dataset with multi-task annotations could be seen
 
 https://imed.nimte.ac.cn/dataofrose.html
 
-## Run the code
+## Running the code
 
 ### Start Visdom
 ```
     python -m visdom.server  -p 2333
 ```
-### Training for OCTA dataset
+### Training on the OCTA dataset
 ```
     python train-OCTA.py
 ```
-### Training for DRIVR dataset
+### Training on the DRIVR dataset
 ```
     python train-DRIVE.py
 ```
