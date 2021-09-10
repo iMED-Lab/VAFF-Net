@@ -71,7 +71,7 @@ def testSeg(pred,gt,imgName,image,name='FAZ'):
     mask_pred = torch.from_numpy(threshed_pred / 255.0)
     true_mask = torch.from_numpy(true_mask)
     DC = get_DC(mask_pred, true_mask)
-    JS = jaccard_score(mask_pred, true_mask)
+    JS = jaccard_score1(mask_pred, true_mask)
     
     
     temp = confusion(mask_pred, true_mask)
