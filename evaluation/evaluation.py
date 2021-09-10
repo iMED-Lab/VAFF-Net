@@ -7,6 +7,7 @@ from scipy import spatial
 import numpy as np
 import os
 import cv2
+from sklearn.metrics import jaccard_score
 
 #Evaluating the iris upper boundary of output image
 def findUpBoundary(eng,edgeImg):
@@ -28,7 +29,7 @@ def hausdorff_score(prediction, groundtruth):
 
 
 
-#新的评价方式
+
 class MetricManager(object):
     def __init__(self, metric_fns):
         self.metric_fns = metric_fns
@@ -89,10 +90,12 @@ def dice_score(prediction, groundtruth):
     return d
 
 
-def jaccard_score(prediction, groundtruth):
+def jaccard_score1(prediction, groundtruth):
     pflat = prediction.flatten()
     gflat = groundtruth.flatten()
-    return (1 - spatial.distance.jaccard(pflat, gflat)) * 100.0
+    # return (1 - spatial.distance.jaccard(pflat, gflat)) * 100.0
+    score = jaccard_score(gflat,pflat)
+    return score*100
 
 
 def intersection_over_union(prediction, groundtruth):
@@ -148,7 +151,6 @@ def accuracy_score(prediction, groundtruth):
     return accuracy * 100.0
     
 
-# 计算混淆矩阵，返回相应的dict
 def confusion(output, target):
     #output = output.double()
     target = target.double()
@@ -244,6 +246,15 @@ def get_JS(SR,GT,threshold=0.5):
 
 def get_DC(SR,GT,threshold=0.5):
     #DC : Dice Coefficient
+    # print(SR.shape, GT.shape)
+    # SR = SR > threshold
+    # GT = GT == torch.max(GT)
+    # Inter = torch.sum((SR+GT)==2)
+    # DC = float(2*Inter) /(float(torch.sum(SR)+torch.sum(GT)) + 1e-6)
+
+    # return DC
+
+
     pflat = SR.flatten()
     gflat = GT.flatten()
     d = (1 - spatial.distance.dice(pflat, gflat)) * 100.0
