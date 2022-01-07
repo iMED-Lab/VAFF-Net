@@ -27,7 +27,6 @@ from utils.tools import *
 
 
 def random_crop(data, junction1, junction2, FAZ, vessel, crop_size):
-    # Random crop
     i, j, h, w = transforms.RandomCrop.get_params(data, output_size=crop_size)
     data = TF.crop(data, i, j, h, w)
     junction1 = TF.crop(junction1, i, j, h, w)
