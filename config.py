@@ -38,6 +38,6 @@ class Config3In():
     confidence = 0.5
     tolerance = 9
 
-    lossWeight = [5,1,2]  #onj, no_obj, class
+    lossWeight = [4,1,2]  #onj, no_obj, class
     weight = 'dwa'
     temp = 2
