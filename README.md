@@ -25,7 +25,7 @@ You can change the path of the dataset and other configurations in the ./config.
 
 The information about the ROSE dataset with multi-task annotations could be seen in the following link: 
 
-https://imed.nimte.ac.cn/dataofrose.html
+https://imed.nimte.ac.cn/ROSE-O.html
 
 ## Running the code
 
@@ -46,9 +46,9 @@ https://imed.nimte.ac.cn/dataofrose.html
 ### Citation
 If you use this code for your research, please cite our papers. 
 ```
-@article{hao2021vaffnet,
-  title={A Voting-based Multi-task Learning Framework for retinal indicators extraction in OCTA Image},
-  author={Hao, Jinkui and Liu, Jiang and Zhao, Yitian},
-  year={2021},
+@article{hao2022vaffnet,
+  title={Retinal Structure Detection in OCTA Image via Voting-based Multi-task Learning},
+  author={Jinkui Hao, Yonghuai Liu, Ardhendu Behera, Jiong Zhang, Yitian Zhao},
+  year={2022},
 }
 ```
