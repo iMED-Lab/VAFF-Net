@@ -22,7 +22,7 @@ class Config3In():
 
     #train
     batch_size = 1
-    num_epochs = 2000
+    num_epochs = 1000
     base_lr = 5e-5
     weight_decay = 5e-5
 
