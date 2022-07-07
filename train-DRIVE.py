@@ -84,7 +84,7 @@ def testSeg(pred,gt,imgName,image,name='vessel'):
 
 
 def test_(model,dataloader,task, isSave = True):
-    
+    model.eval()
     funcMtx_Vess = {'AUC':[], 'DC':[], 'Acc':[], 'Sen':[], 'JS':[]}
 
     funcMtx_cmb = {'SEN_det':[], 'SPE_det':[], 'PRE_det':[], 'F1_det':[], 
@@ -187,7 +187,7 @@ def test_(model,dataloader,task, isSave = True):
             np.mean(funcMtx_cmb['PRE_det']), np.std(funcMtx_cmb['PRE_det']), np.mean(funcMtx_cmb['F1_det']), np.std(funcMtx_cmb['F1_det'])))
     print('Classification Sen, Pre, F1: %04f+%04f, %04f+%04f, %04f+%04f'%(np.mean(funcMtx_cmb['SEN_cla']), np.std(funcMtx_cmb['SEN_cla']),\
             np.mean(funcMtx_cmb['PRE_cla']), np.std(funcMtx_cmb['PRE_cla']), np.mean(funcMtx_cmb['F1_cla']), np.std(funcMtx_cmb['F1_cla'])))
-    
+    model.train()
     return funcMtx_Vess,funcMtx_cmb
 
 def train_(model,dataloader_train,dataloader_test):
@@ -362,7 +362,7 @@ if __name__ =='__main__':
 
 
     # #test
-    # path = '/home/imed/personal/kevin/result/multi-task/MT_Drive-our2/state-472-vess-79.21747276210415.pth'
+    # path = 'state-472-vess-79.21747276210415.pth'
     # model = torch.load(path)
     # save_dir =  Config3In.savePath
 
