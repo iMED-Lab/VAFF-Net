@@ -82,7 +82,7 @@ def testSeg(pred,gt,imgName,image,name='FAZ'):
     return AUC, DC, Acc, Sen, JS
 
 def test_(model,dataloader,task, isSave = True):
-    
+    model.eval()
     funcMtx_FAZ = {'AUC':[], 'DC':[], 'Acc':[], 'Sen':[], 'JS':[]}
     funcMtx_Vess = {'AUC':[], 'DC':[], 'Acc':[], 'Sen':[], 'JS':[]}
 
@@ -203,7 +203,7 @@ def test_(model,dataloader,task, isSave = True):
             np.mean(funcMtx_cmb['PRE_det']), np.std(funcMtx_cmb['PRE_det']), np.mean(funcMtx_cmb['F1_det']), np.std(funcMtx_cmb['F1_det'])))
     print('Classification Sen, Pre, F1: %04f+%04f, %04f+%04f, %04f+%04f'%(np.mean(funcMtx_cmb['SEN_cla']), np.std(funcMtx_cmb['SEN_cla']),\
             np.mean(funcMtx_cmb['PRE_cla']), np.std(funcMtx_cmb['PRE_cla']), np.mean(funcMtx_cmb['F1_cla']), np.std(funcMtx_cmb['F1_cla'])))
-    
+    model.train()
     return funcMtx_FAZ,funcMtx_Vess,funcMtx_cmb
 
 def train_(model,dataloader_train,dataloader_test):
