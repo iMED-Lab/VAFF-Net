@@ -160,7 +160,7 @@ class VAFFNet(nn.Module):
         self.finalBN_d2 = nn.BatchNorm2d(128)
         self.finalrelu_d2 = nn.ReLU(inplace=True)
         
-        self.finalconv2_d = nn.Conv2d(128, 4, kernel_size=1, stride=1, padding=0)
+        self.finalconv2_d = nn.Conv2d(128, 6, kernel_size=1, stride=1, padding=0)
 
     def _upsample_add(self, x, y):
         _,_,H,W = y.size()
