@@ -48,7 +48,7 @@ If you use this code for your research, please cite our papers.
 ```
 @article{hao2022vaffnet,
   title={Retinal Structure Detection in OCTA Image via Voting-based Multi-task Learning},
-  author={Jinkui Hao, Yonghuai Liu, Ardhendu Behera, Jiong Zhang, Yitian Zhao},
+  author={Hao, Jinkui and Shen, Ting and Zhu, Xueli and Liu, Yonghuai and Behera, Ardhendu and Zhang, Dan and Chen, Bang and Liu, Jiang and Zhang, Jiong and Zhao, Yitian},
   year={2022},
 }
 ```
