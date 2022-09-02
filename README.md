@@ -47,8 +47,11 @@ https://imed.nimte.ac.cn/ROSE-O.html
 If you use this code for your research, please cite our papers. 
 ```
 @article{hao2022vaffnet,
-  title={Retinal Structure Detection in OCTA Image via Voting-based Multi-task Learning},
   author={Hao, Jinkui and Shen, Ting and Zhu, Xueli and Liu, Yonghuai and Behera, Ardhendu and Zhang, Dan and Chen, Bang and Liu, Jiang and Zhang, Jiong and Zhao, Yitian},
+  journal={IEEE Transactions on Medical Imaging}, 
+  title={Retinal Structure Detection in OCTA Image via Voting-based Multi-task Learning}, 
   year={2022},
+  pages={1-1},
+  doi={10.1109/TMI.2022.3202183},
 }
 ```
